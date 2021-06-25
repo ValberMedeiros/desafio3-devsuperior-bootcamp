@@ -5,11 +5,13 @@ import java.io.Serializable;
 import com.devsuperior.bds04.entities.City;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class CityDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
+	@NotNull(message = "Campo requerido")
 	@NotBlank(message = "Campo requerido")
 	private String name;
 	
