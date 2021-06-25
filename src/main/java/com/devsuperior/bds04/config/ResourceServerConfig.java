@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     private static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
-    private static final String[] CLIENT_OR_ADMIN = { "/cities/**", "/events/**" };
+    private static final String[] CLIENT_GET = { "/cities/**", "/events/**" };
     private static final String[] CLIENT = {"/events"};
     private static final String ROLE_ADMIN = "ADMIN";
     private static final String ROLE_CLIENT = "CLIENT";
@@ -46,9 +46,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(PUBLIC).permitAll()
-                .antMatchers(HttpMethod.GET, CLIENT_OR_ADMIN).permitAll()
+                .antMatchers(HttpMethod.GET, CLIENT_GET).permitAll()
                 .antMatchers(HttpMethod.POST, CLIENT).hasAnyRole(ROLE_CLIENT, ROLE_ADMIN)
-                .antMatchers(CLIENT_OR_ADMIN).hasAnyRole(ROLE_CLIENT, ROLE_ADMIN)
                 .anyRequest().hasRole(ROLE_ADMIN);
     }
 }
