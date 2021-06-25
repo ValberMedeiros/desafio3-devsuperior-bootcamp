@@ -1,4 +1,4 @@
-package com.devsuperior.bds04.dto;
+package com.devsuperior.bds04.entities;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

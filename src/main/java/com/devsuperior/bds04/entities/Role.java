@@ -1,4 +1,4 @@
-package com.devsuperior.bds04.dto;
+package com.devsuperior.bds04.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
